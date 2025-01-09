@@ -1,33 +1,43 @@
-#include <stdlib.h> 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
+// 스킬트리 가능한 개수 구하는 문제
 
+int solution(const char* skill, const char* skill_trees[], size_t skill_trees_len) {
+    int answer = 0; // 가능한 스킬트리 개수
 
-// 파스칼의 삼각형 생성 함수
-int** generate(int numRows, int* returnSize, int** returnColumnSizes) {
+    // 스킬트리 순회
+    for (size_t i = 0; i < skill_trees_len; i++) {
+        int skill_index = 0; 
+        bool is_valid = true; 
 
-    *returnSize = numRows;
+        // 각 스킬트리의 스킬 순서 검사
+        for (size_t j = 0; skill_trees[i][j] != '\0'; j++) { 
+            // 현재 스킬이 선행 스킬에 있는지 확인
+            int found = -1; 
+            for (int k = 0; skill[k] != '\0'; k++) {
+                if (skill[k] == skill_trees[i][j]) { // 스킬 발견
+                    found = k; 
+                    break;
+                }
+            }
 
-    int** result = (int**)malloc(numRows * sizeof(int*)); // 행 크기 할당
-    *returnColumnSizes = (int*)malloc(numRows * sizeof(int)); // 각 행의 열 크기 저장 배열 할당
-
-    for (int i = 0; i < numRows; i++) {
-        (*returnColumnSizes)[i] = i + 1;
-        result[i] = (int*)malloc((i + 1) * sizeof(int));
-
-        // 첫 번째와 마지막 요소는 항상 1
-        result[i][0] = 1; 
-        result[i][i] = 1; 
-
-        // 위 두 값의 합
-        for (int j = 1; j < i; j++) {
-            result[i][j] = result[i - 1][j - 1] + result[i - 1][j];
+            // 현재 스킬이 선행 스킬에 포함되어 있는 경우
+            if (found != -1) {
+                // 순서 확인하기
+                if (found == skill_index) {
+                    skill_index++; // 다음 스킬로 이동
+                } else { 
+                    is_valid = false; // 순서가 틀림
+                    break;
+                }
+            }
+        }
+        if (is_valid) {
+            answer++;
         }
     }
 
-    return result;
+    return answer; 
 }
