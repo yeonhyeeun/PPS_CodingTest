@@ -1,33 +1,32 @@
-#include <stdlib.h> 
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h> 
 
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
+// 1. 문자열 길이가 4 또는 6인지 확인
+// 2. 숫자로만 이루어졌는지 확인
+// 3. 조건을 모두 만족하면 True 반환
 
+int solution(const char* s) {
+    int length = strlen(s); 
 
-// 파스칼의 삼각형 생성 함수
-int** generate(int numRows, int* returnSize, int** returnColumnSizes) {
+    if (length != 4 && length != 6) {
+        return 0; 
+    }
 
-    *returnSize = numRows;
-
-    int** result = (int**)malloc(numRows * sizeof(int*)); // 행 크기 할당
-    *returnColumnSizes = (int*)malloc(numRows * sizeof(int)); // 각 행의 열 크기 저장 배열 할당
-
-    for (int i = 0; i < numRows; i++) {
-        (*returnColumnSizes)[i] = i + 1;
-        result[i] = (int*)malloc((i + 1) * sizeof(int));
-
-        // 첫 번째와 마지막 요소는 항상 1
-        result[i][0] = 1; 
-        result[i][i] = 1; 
-
-        // 위 두 값의 합
-        for (int j = 1; j < i; j++) {
-            result[i][j] = result[i - 1][j - 1] + result[i - 1][j];
+    for (int i = 0; i < length; i++) {
+        if (!isdigit(s[i])) { // 숫자가 아닌 문자가 있으면
+            return 0; // False 반환
         }
     }
 
-    return result;
+    return 1; // True 반환
+}
+
+int main() {
+    // 테스트
+    printf("%d\n", solution("1234"));  
+    printf("%d\n", solution("a234"));  
+    printf("%d\n", solution("12345"));  
+    printf("%d\n", solution("000000")); 
+    return 0;
 }
