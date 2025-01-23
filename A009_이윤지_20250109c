@@ -29,4 +29,8 @@ int main() {
     printf("%d\n", solution("12345"));  
     printf("%d\n", solution("000000")); 
     return 0;
+
+//코드리뷰 작성 📚
+//나는 비슷한 문제를 python으로 풀었던것 같기도 한데 c로 풀땐 어떤 메서드가 있는지 확인하기 좋은 코드였다
+
 }
