@@ -9,3 +9,6 @@ def solution(s):
     answer = p_count == y_count  
 
     return answer
+
+#코드리뷰 작성 📚
+#9행 빼고는 나의 코드와 똑같았다 
