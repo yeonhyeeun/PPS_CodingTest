@@ -30,3 +30,7 @@ int findContentChildren(int* g, int gSize, int* s, int sSize) {
 
     return child;
 }
+
+
+// review
+// compare함수와 qsort메서드 사용을 적절히 사용하여 코드를 간략히 작성함 
