@@ -24,3 +24,7 @@ def solution(N, stages):
     # 정렬gn 스테이지 번호 추출
     result = [stage for stage, _ in failure_rates]
     return result
+
+#코드리뷰 작성 📚
+#개인적으로는 습관적으로 +=는 많이 사용해도 -=을 사용하는 조건으로는 생각하지 못했는데 좋은 방식인것 같고, result안에서의 형식도(25행)
+#다시 보고 공부할 것 같다
