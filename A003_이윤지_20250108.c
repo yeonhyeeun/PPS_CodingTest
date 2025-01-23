@@ -19,3 +19,6 @@ int* plusOne(int* digits, int digitsSize, int* returnSize) {
     *returnSize = digitsSize + 1;
     return result;
 }
+
+//코드리뷰 작성 📚 
+//int* 타입을 반환하는 함수를 작성하는데 어려움이 없어 보이고 malloc과 sizeof 메서드를 잘 사용하는 것 같다! 
