@@ -31,3 +31,6 @@ int** generate(int numRows, int* returnSize, int** returnColumnSizes) {
 
     return result;
 }
+
+// 코드리뷰 작성 📚
+// malloc 이후 free해주면 좋을 것 같다. 
