@@ -46,3 +46,7 @@ class Solution:
             ranges.append("{}->{}".format(start, nums[-1]))
         
         return ranges
+
+
+# 코드리뷰 
+# 문제에 필요한 메서드를 적절히 사용하여 간략하게 잘 작성하였다
