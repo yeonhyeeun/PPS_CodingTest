@@ -24,3 +24,6 @@ class Solution:
         for num in nums:
             result ^= num  # 배열의 모든 숫자를 XOR
         return result  # 최종적으로 남은 숫자가 정답
+
+# 코드리뷰 
+# 간단하게 잘 짠것 같다 
