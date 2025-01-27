@@ -16,3 +16,6 @@ def solution():
 
 # 실행
 solution()
+
+#코드리뷰 
+#List안에 새롭게 Map을 만든게 독특했다
