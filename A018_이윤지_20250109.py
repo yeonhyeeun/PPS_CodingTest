@@ -24,3 +24,6 @@ def solution():
 
 # 실행
 solution()
+
+# 코드리뷰 
+# list를 만들때 문제 조건에 맞게 split을 적절히 사용하였다  
