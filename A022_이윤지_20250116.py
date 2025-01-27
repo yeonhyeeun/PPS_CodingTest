@@ -31,3 +31,6 @@ def solution():
 
 # 실행
 solution()
+
+#코드리뷰 
+# if-elif-else문으로 조건에 맞게 출력을 잘 했음
