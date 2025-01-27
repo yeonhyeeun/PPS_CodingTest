@@ -24,3 +24,6 @@ def solution(N):
 N = int(input())
 # 결과 출력
 print(solution(N))
+
+# 코드리뷰 
+# ceil 함수는 처음 봤는데 다양한 문제 조건을 맞추기 위해 알고있어야할것 같다. 
