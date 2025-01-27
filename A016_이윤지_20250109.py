@@ -24,3 +24,6 @@ def solution(people, limit):
         boats += 1
     
     return boats
+
+# 코드리뷰 
+# 가장 무거운 사람의 인덱스 구하는 방법을 len을 사용하는 방법으로 잘 생각한것 같다. 
