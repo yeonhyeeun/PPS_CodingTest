@@ -19,3 +19,6 @@ verification_number = square_sum % 10
 
 # 결과 출력
 print(verification_number)
+
+# 코드리뷰 
+# 한줄에 연산을 여러개 작성하여 코드 길이를 줄인 점이 좋은 것 같다.
